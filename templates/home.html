@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>customer churn prediction app</title>
+    <!-- <link rel="stylesheet" href="home.css"> -->
+    <link rel="stylesheet" href="{{url_for('static' ,filename='css/style.css')}}">
+</head>
+<body>
+    
+    <h1 class="title">E-Commerce Customer Churn Prediction App </h1>
+
+
+    <form action="{{ url_for('predict_datapoint')}}" method="post" class="form">
+
+        <h2>CustomerID</h2>
+        <input class="area" type="text" name="CustomerID" value="1000">
+        
+        <h2>PreferredLoginDevice</h2>
+        <div class="switch-field">
+         <input type="radio" id="radio-login-1" name="PreferredLoginDevice" value="Phone">
+        <label for="radio-login-1">Phone</label>
+
+        <input type="radio" id="radio-login-2" name="PreferredLoginDevice" value="Computer">
+        <label for="radio-login-2">Computer</label>
+        </div>
+        
+        <h2>CityTier</h2>
+        <div class="switch-field">
+            <input type="radio" id="radio-city-1" name="CityTier" value="1">
+            <label for="radio-city-1">1</label>
+            <input type="radio" id="radio-city-2" name="CityTier" value="2">
+            <label for="radio-city-2">2</label>
+            <input type="radio" id="radio-city-3" name="CityTier" value="3">
+            <label for="radio-city-3">3</label>
+
+        </div>
+
+       
+        
+        <h2>PreferredPaymentMode</h2>
+        <select class="scroll" id="paymentmode" name="PreferredPaymentMode">
+            <option value="Debit Card">Debit Card</option>
+            <option value="CC">CC</option>
+            <option value="E wallet">E wallet</option>
+            <option value="COD">COD</option>
+            <option value="UPI">UPI</option>
+        </select>
+
+        <h2>Gender</h2>
+
+        <div class="switch-field">
+        <input type="radio" id="radio-gender-1" name="Gender" value="Male">
+        <label for="radio-gender-1">Male</label>
+        <input type="radio" id="radio-gender-2" name="Gender" value="Female">
+        <label for="radio-gender-2">Female</label>
+        </div>
+
+        <h2>HourSpendOnApp</h2>
+        <select class="scroll" id="hourspend" name="HourSpendOnApp">
+            <option value="0.0">0.0</option>
+            <option value="1.0">1.0</option>
+            <option value="2.0">2.0</option>
+            <option value="3.0">3.0</option>
+            <option value="4.0">4.0</option>
+            <option value="5.0">5.0</option>
+        </select>
+
+        <h2>NumberOfDeviceRegistered</h2>
+        <select class="scroll" id="devicereg" name="NumberOfDeviceRegistered">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
+
+        <h2>PreferedOrderCat</h2>
+
+        <div class="switch-field">
+            <select class="scroll" id="PreferedOrderCat" name="PreferedOrderCat">
+                <option value="Mobile Phone">Mobile Phone</option>
+                <option value="Laptop & Accessory">Laptop & Accessory</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Grocery">Grocery</option>
+                <option value="Others">Others</option>
+            </select>
+        </div>
+
+        <h2>SatisfactionScore</h2>
+        <select class="scroll" id="SatisfactionScore" name="SatisfactionScore">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <h2>MaritalStatus</h2>
+        <div class="switch-field">
+        <input type="radio" id="radio-mar-1" name="MaritalStatus" value="Single">
+        <label for="radio-mar-1">Single</label>
+        <input type="radio" id="radio-mar-2" name="MaritalStatus" value="Married">
+        <label for="radio-mar-2">Married</label> 
+         <input type="radio" id="radio-mar-3" name="MaritalStatus" value="Divorced">
+        <label for="radio-mar-3">Divorced</label>
+        </div>
+
+        <h2>NumberOfAddress</h2>
+        <input class="area" type="text" name="NumberOfAddress">
+
+        <h2>Complain</h2>
+        <div class="switch-field">
+        <input type="radio" id="radio-com-1" name="Complain" value="0">
+        <label for="radio-com-1">0</label>
+        <input type="radio" id="radio-com-2" name="Complain" value="1">
+        <label for="radio-com-2">1</label>
+        </div>
+
+        <h2>OrderAmountHikeFromlastYear</h2>
+        <input class="area" type="text" name="OrderAmountHikeFromlastYear">
+
+        <h2>CouponUsed</h2>
+        <input class="area" type="text" name="CouponUsed">
+
+        <h2>OrderCount</h2>
+        <select class="scroll" "id="OrderCount" name="OrderCount">
+            <option value="2">2</option>
+            <option value="4">4</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+            <option value="10">10</option>
+            <option value="12">12</option>
+            <option value="14">14</option>
+            <option value="16">16</option>
+        </select>
+
+        <h2>DaySinceLastOrder</h2>
+        <input class="area" type="text" name="DaySinceLastOrder">
+
+        <h2>CashbackAmount</h2>
+        <input class="area" type="text" name="CashbackAmount">
+        
+        <h2>Tenure_update</h2>
+        <input class="area"type="text" name="Tenure_update">
+
+        <h2>WarehouseToHome_update</h2>
+        <input class="area"type="text" name="WarehouseToHome_update">
+
+        <div>
+            <input class="submit" type="submit" value="Predict Result" required />
+        </div>
+
+        <!-- <button class="submit" type="button">Predict Result</button> -->
+        <h2 class="result">
+            {{ results }}
+       </h2>
+       
+         
+
+    </form>
+
+    
+    
+</body>
+</html>
