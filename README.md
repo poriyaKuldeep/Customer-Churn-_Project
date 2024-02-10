@@ -49,8 +49,9 @@ Dataset Source Link :
 AWS Elastic Beanstalk link : [http://gemstonepriceutkarshgaikwad-env.eba-7zp3wapg.ap-south-1.elasticbeanstalk.com/](http://gemstonepriceutkarshgaikwad-env.eba-7zp3wapg.ap-south-1.elasticbeanstalk.com/) -->
 
 # Screenshot of UI
-<img src="https://github.com/poriyaKuldeep/Customer-Churn-_Project/blob/main/Screenshot%20(34).png">
-<img src="https://github.com/poriyaKuldeep/Customer-Churn-_Project/blob/main/Screenshot%20(33).png">
+
+![HomepageUI](./Screenshot%20(34).png)
+![HomepageUI](./Screenshot%20(33).png)
 
 <!-- # YouTube Video Link
 
@@ -74,30 +75,50 @@ API Link : [http://gemstonepriceutkarshgaikwad-env.eba-7zp3wapg.ap-south-1.elast
 
 2. Data Transformation : 
     * In this phase a ColumnTransformer Pipeline is created.
-    * for Numeric Variables first SimpleImputer is applied with strategy median , then Standard Scaling is performed on numeric data.
-    * for Categorical Variables SimpleImputer is applied with most frequent strategy, then ordinal encoding performed , after this data is scaled with Standard Scaler.
+    * for Numeric Variables first KNNImputer is applied with strategy median , then Standard Scaling is performed on numeric data.
+    * for Categorical Variables KNNImputer is applied with most frequent strategy, then OneHotEncoding performed , after this data is scaled with Standard Scaler.
     * This preprocessor is saved as pickle file.
 
 3. Model Training : 
-    * In this phase base model is tested . The best model found was catboost regressor.
-    * After this hyperparameter tuning is performed on catboost and knn model.
-    * A final VotingRegressor is created which will combine prediction of catboost, xgboost and knn models.
+    * In this phase base model is tested . The best model found was RandomForest Classifier.
+    * Evalute the model performance by Validation accuracy.
     * This model is saved as pickle file.
 
 4. Prediction Pipeline : 
     * This pipeline converts given data into dataframe and has various functions to load pickle files and predict the final results in python.
 
-5. Flask App creation : 
-    * Flask app is created with User Interface to predict the gemstone prices inside a Web Application.
+5. User Interface Creation :
+    * create Simple UI form using HTML,CSS for get value from user.    
 
-# Exploratory Data Analysis Notebook
+6. Flask App creation : 
+    * Flask app is created and Integrate with User Interface to predict whetehr a customer will churn or not inside a Web Application.
 
-Link : [EDA Notebook](./notebook/1_EDA_Gemstone_price.ipynb)
+<br>
 
-# Model Training Approach Notebook
+# Exploratory Data Analysis Notebook.
+
+
+
+Link : [EDA Notebook](./notebook/EDA%20CUSTOMER%20CHURN%20.ipynb)
+
+## Steps that are Implimented :
+<h3>-> Data analysis using Libraries like Numpy,pandas and matplotlib and get meaningfull  Inshights.</h3>
+<h3>-> Perform Univariant Analysis , Bivariant Analysis and Multivariant Analysis to find out relation between Features.</h3>
+<h3>-> Feature Engineering :</h3>
+    * Column Transformer and Machine Learning Pipeline. <br>
+    * Outlier detection and removal. <br>
+    * Handling Missing values (KNNImputer). <br>
+    * Feature Scaling. <br>
+    * Handling Categorical Data. <br>
+    * Export Clean preprocee data into csv file.<br>
+<br>
+
+# Model Training Approach Notebook.
 
 Link : [Model Training Notebook](./notebook/2_Model_Training_Gemstone.ipynb)
 
-# Model Interpretation with LIME 
+## Steps that are Implimented :
+<h3>-> Import all required Machine Learning Models.</h3>
+<h3>-> Create ColumnTransformer for Individual Column and after that combine all ColumnTransformer Object Into Machine Learning Pipeline.</h3>
+<h3>-> Create different Machine Learning Pipeline according to models and evalute their accuracy and validation accuracy of models.</h3>
 
-Link : [LIME Interpretation](./notebook/3_Explainability_with_LIME.ipynb)
