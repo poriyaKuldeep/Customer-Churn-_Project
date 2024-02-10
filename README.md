@@ -50,7 +50,7 @@ AWS Elastic Beanstalk link : [http://gemstonepriceutkarshgaikwad-env.eba-7zp3wap
 
 # Screenshot of UI
 
-![HomepageUI](./Screenshots/HomepageUI.jpg)
+<img src="https://github.com/poriyaKuldeep/Customer-Churn-_Project/blob/main/Screenshot%20(33).png">
 
 <!-- # YouTube Video Link
 
