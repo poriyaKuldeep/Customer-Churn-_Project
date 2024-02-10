@@ -49,7 +49,7 @@ Dataset Source Link :
 AWS Elastic Beanstalk link : [http://gemstonepriceutkarshgaikwad-env.eba-7zp3wapg.ap-south-1.elasticbeanstalk.com/](http://gemstonepriceutkarshgaikwad-env.eba-7zp3wapg.ap-south-1.elasticbeanstalk.com/) -->
 
 # Screenshot of UI
-
+<img src="https://github.com/poriyaKuldeep/Customer-Churn-_Project/blob/main/Screenshot%20(34).png">
 <img src="https://github.com/poriyaKuldeep/Customer-Churn-_Project/blob/main/Screenshot%20(33).png">
 
 <!-- # YouTube Video Link
