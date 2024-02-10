@@ -41,14 +41,6 @@ class DataTransformation:
                                  "CashbackAmount","Tenure_update","WarehouseToHome_update","PreferredLoginDevice",
                                  "PreferredPaymentMode","Gender","PreferedOrderCat","MaritalStatus"]
             
-            # categorical_columns=train_df[["PreferredLoginDevice","PreferredPaymentMode","Gender","PreferedOrderCat","MaritalStatus"]]
-            # all_columns=train_df
-            # numerical_columns=train_df[["CustomerID","CityTier","HourSpendOnApp","NumberOfDeviceRegistered","SatisfactionScore","NumberOfAddress",
-            #                      "Complain","OrderAmountHikeFromlastYear","CouponUsed","OrderCount","DaySinceLastOrder",
-            #                      "CashbackAmount","Tenure_update","WarehouseToHome_update"]]
-            # train_df=train_df.drop( columns=["Churn"],axis=1)
-            # numerical_columns=train_df.select_dtypes(exclude="object").columns
-            # categorical_columns=train_df.select_dtypes(include="object").columns
 
             
 
@@ -73,38 +65,7 @@ class DataTransformation:
             logging.info(f"Categorical columns: {categorical_columns}")
             logging.info(f"Numerical columns: {numerical_columns}")
 
-            # trf1=ColumnTransformer(transformers=[
-            #       ('one_hot' , OneHotEncoder(sparse_output=False,handle_unknown="ignore" ) ,categorical_columns)
-            #            ],remainder="passthrough")
             
-            # trf2=ColumnTransformer([
-            #  ('KNNimputer' ,KNNImputer(n_neighbors=5),slice(32))
-    
-            #         ] ,remainder='passthrough')
-            
-            # trf3=ColumnTransformer([
-            #     ('scale' , StandardScaler() ,[] )
-            #     ],remainder="passthrough")
-            
-            # pipe=Pipeline([
-            #      ("trf1",trf1),
-            #      ("trf2",trf2),
-            #      ("trf3",trf3),
-            #            ])
-
-
-
-
-
-
-            # pipeline_obj=Pipeline(steps=[
-            #     ('one_hot' , OneHotEncoder(sparse_output=False,handle_unknown="ignore" ) ,categorical_columns),
-            #     ('KNNimputer' ,KNNImputer(n_neighbors=5), all_columns),
-            #     ('scale' , StandardScaler() ,all_columns),
-
-
-            # ])
-
             preprocessor=ColumnTransformer(
                 transformers=[
                     ("num_pipeline",num_pipeline,numerical_columns),
@@ -112,9 +73,7 @@ class DataTransformation:
                 ]
             )
 
-            # base=Pipeline(steps=[
-            #     ('preprocessor',preprocessor)
-            # ])
+            
 
             return preprocessor
         
@@ -137,31 +96,7 @@ class DataTransformation:
 
             target_column_name="Churn"
 
-            # numerical_columns = ["CustomerID","CityTier","HourSpendOnApp","NumberOfDeviceRegistered","SatisfactionScore","NumberOfAddress",
-            #                      "Complain","OrderAmountHikeFromlastYear","CouponUsed","OrderCount","DaySinceLastOrder",
-            #                      "CashbackAmount","Tenure_update","WarehouseToHome_update"]
-            # categorical_columns = ["PreferredLoginDevice","PreferredPaymentMode","Gender","PreferedOrderCat","MaritalStatus"]
-            # all_columns=[["CustomerID","CityTier","HourSpendOnApp","NumberOfDeviceRegistered","SatisfactionScore","NumberOfAddress",
-            #                      "Complain","OrderAmountHikeFromlastYear","CouponUsed","OrderCount","DaySinceLastOrder",
-            #                      "CashbackAmount","Tenure_update","WarehouseToHome_update","PreferredLoginDevice",
-            #                      "PreferredPaymentMode","Gender","PreferedOrderCat","MaritalStatus"]]
-
-            # categorical_columns=train_df[["PreferredLoginDevice","PreferredPaymentMode","Gender","PreferedOrderCat","MaritalStatus"]]
-            # # all_columns=train_df
-            # numerical_columns=train_df[["CustomerID","CityTier","HourSpendOnApp","NumberOfDeviceRegistered","SatisfactionScore","NumberOfAddress",
-            #                      "Complain","OrderAmountHikeFromlastYear","CouponUsed","OrderCount","DaySinceLastOrder",
-            #                      "CashbackAmount","Tenure_update","WarehouseToHome_update"]]
             
-            # X_train=train_df.loc[:, train_df.columns != 'Churn']
-            # Y_train=train_df["Churn"]
-
-            # X_test=test_df.loc[:, test_df.columns != 'Churn']
-            # Y_test=test_df["Churn"]
-
-
-            
-            # x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size = 0.3, random_state = 10)
-
             
 
             input_feature_train_df=train_df.drop( columns=[target_column_name],axis=1)

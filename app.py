@@ -44,15 +44,7 @@ def predict_datapoint():
         
         pred_df=data.get_data_as_data_frame()
         print(pred_df)
-        # print("before prediction")
-        # preprocessor=pickle.load(open('artifacts\proprocessor.pkl','rb'))
-
-        # data=preprocessor.fit_transform(pred_df)
-
-        # model=pickle.load(open('artifacts\model.pkl','rb'))
-
-        # pred=model.predict(data)
-
+        
 
 
         predict_pipline=PredictPipline()

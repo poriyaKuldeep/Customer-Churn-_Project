@@ -45,8 +45,6 @@ class ModelTrainer:
                 "Decision Tree": DecisionTreeClassifier(),
                 "Gradient Boosting": GradientBoostingClassifier(),
                 "Linear classifier": LogisticRegression(),
-                # "XGBRegressor": XGBClassifier(),
-                # "CatBoosting Regressor": CatBoostClassifier(verbose=False),
                 "AdaBoost classifier": AdaBoostClassifier(),
                 
                 
